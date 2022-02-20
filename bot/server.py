@@ -1,15 +1,10 @@
-from flask import Flask, redirect, url_for, render_template
-from threading import Thread
+const express = require('express');
+const app = express();
 
-app = Flask('')
+const port = 3000;
 
-@app.route('/')
-def main():
-  return render_template('index.html')
+app.get('/', (req, res) => res.send('GUMAGANA AKOOOO'));
 
-def run():
-  app.run(host='0.0.0.0', port=8080)
-
-def server():
-  server = Thread(target=run)
-  server.start()
+app.listen(port, () =>
+	console.log(`Your app is listening a http://localhost:${port}`)
+);
